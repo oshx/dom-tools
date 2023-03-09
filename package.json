@@ -1,0 +1,36 @@
+{
+  "name": "@oshx/dom-tools",
+  "version": "0.0.1",
+  "description": "DOM toolds for vanilla TypeScript",
+  "entry": "src/index.ts",
+  "main": "lib/index.js",
+  "sourceRoot": "src/",
+  "types": "lib/index.d.ts",
+  "typeRoots": "src/@types/index.ts",
+  "scripts": {
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('use Yarn, no NPM')\"",
+    "prebuild": "rimraf lib",
+    "build": "rollup -c rollup.config.ts",
+    "release": "yarn build && rimraf node_modules",
+    "watch": "rollup -cw"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oshx/dom-tools"
+  },
+  "author": {
+    "name": "오승환",
+    "email": "oshxios@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.9",
+    "@types/node": "^17.0.30",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.70.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "typescript": "^4.9.5"
+  }
+}
