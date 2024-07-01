@@ -1,4 +1,4 @@
-const innerDOM: InnerDOM = {
+export const uniqueDOM: UniqueDOM = {
   root: window.document.documentElement,
   head: window.document.head || window.document.getElementsByTagName('head')[0],
   body: <HTMLBodyElement>(
@@ -6,28 +6,29 @@ const innerDOM: InnerDOM = {
   ),
 };
 
-export function onceInlineFrame(
+export function onceIframe(
   src: SourceString,
   timer: EpochTimeStamp = 300
-): NodeJS.Timeout {
-  if (!innerDOM?.inlineFrame) {
-    innerDOM.inlineFrame = window.document.createElement('iframe');
+): ReturnType<typeof setTimeout> | void {
+  if (!uniqueDOM?.iframe) {
+    uniqueDOM.iframe = {};
   }
-  if (innerDOM.inlineFrameSource !== src) {
-    innerDOM.inlineFrameSource = src;
+  if (uniqueDOM.iframe[src]) {
+    return;
   }
-  innerDOM.inlineFrame.src = innerDOM.inlineFrameSource;
-  innerDOM.inlineFrame.style.position = 'absolute';
-  innerDOM.inlineFrame.style.visibility = 'hidden';
-  innerDOM.inlineFrame.style.maxWidth = '0';
-  innerDOM.inlineFrame.style.maxHeight = '0';
-  innerDOM.inlineFrame.style.opacity = '0';
-  innerDOM.body.appendChild(innerDOM.inlineFrame);
+  uniqueDOM.iframe[src] = window.document.createElement('iframe');
+  uniqueDOM.iframe[src].src = src;
+  uniqueDOM.iframe[src].style.position = 'absolute';
+  uniqueDOM.iframe[src].style.visibility = 'hidden';
+  uniqueDOM.iframe[src].style.maxWidth = '0';
+  uniqueDOM.iframe[src].style.maxHeight = '0';
+  uniqueDOM.iframe[src].style.opacity = '0';
+  uniqueDOM.body.appendChild(uniqueDOM.iframe[src]);
   return setTimeout(function removeEffect(): void {
-    if (!innerDOM?.inlineFrame) {
+    if (!uniqueDOM.iframe?.[src]) {
       return;
     }
-    innerDOM.body.removeChild(innerDOM?.inlineFrame);
+    uniqueDOM.body.removeChild(uniqueDOM.iframe[src]);
   }, timer);
 }
 
@@ -36,14 +37,15 @@ export function onceScript(
   async = false,
   defer = false
 ): HTMLScriptElement {
-  if (innerDOM.script && innerDOM.scriptSource === src) {
-    return innerDOM.script;
+  if (!uniqueDOM.script) {
+    uniqueDOM.script = {};
   }
-  innerDOM.scriptSource = src;
-  innerDOM.script = window.document.createElement('script');
-  innerDOM.script.src = innerDOM.scriptSource;
-  innerDOM.script.async = async;
-  innerDOM.script.defer = defer;
-  innerDOM.head.appendChild(innerDOM.script);
-  return innerDOM.script;
+  if (!uniqueDOM.script?.[src]) {
+    uniqueDOM.script[src] = window.document.createElement('script');
+    uniqueDOM.script[src].src = src;
+    uniqueDOM.script[src].async = async;
+    uniqueDOM.script[src].defer = defer;
+    uniqueDOM.head.appendChild(uniqueDOM.script[src]);
+  }
+  return uniqueDOM.script[src];
 }
