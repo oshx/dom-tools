@@ -13,12 +13,17 @@ const aliasConfig = {
   ],
 };
 
+const tsConfig = {
+  tsconfig: './tsconfig.json',
+  declaration: true,
+};
+
 export default {
   input: PackageJson.entry,
   output: {
     file: PackageJson.main,
-    format: 'esm',
+    format: 'cjs',
     sourcemap: true,
   },
-  plugins: [peerDepsExternal(), typescript(), alias(aliasConfig)],
+  plugins: [peerDepsExternal(), typescript(tsConfig), alias(aliasConfig)],
 };

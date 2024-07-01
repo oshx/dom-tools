@@ -8,7 +8,6 @@
   "types": "lib/index.d.ts",
   "typeRoots": "src/@types/index.ts",
   "scripts": {
-    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('use Yarn, no NPM')\"",
     "prebuild": "rimraf lib",
     "build": "rollup -c rollup.config.ts",
     "release": "yarn build && rimraf node_modules",

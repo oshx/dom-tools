@@ -1,5 +1,3 @@
-import { InnerDOM, SourceString } from '@/@types';
-
 const innerDOM: InnerDOM = {
   root: window.document.documentElement,
   head: window.document.head || window.document.getElementsByTagName('head')[0],

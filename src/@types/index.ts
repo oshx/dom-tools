@@ -1,16 +1,16 @@
-export type SourceString = string;
+declare type SourceString = string;
 
-export interface InnerDOMRequired {
+declare interface InnerDOMRequired {
   root: HTMLElement;
   head: HTMLHeadElement;
   body: HTMLBodyElement;
 }
 
-export interface InnerDOMOptional {
+declare interface InnerDOMOptional {
   inlineFrame: HTMLIFrameElement;
   inlineFrameSource: SourceString;
   script: HTMLScriptElement;
   scriptSource: SourceString;
 }
 
-export type InnerDOM = InnerDOMRequired & Partial<InnerDOMOptional>;
+declare type InnerDOM = InnerDOMRequired & Partial<InnerDOMOptional>;
