@@ -1,14 +1,13 @@
 {
   "name": "@oshx/dom-tools",
-  "version": "0.0.1",
-  "description": "DOM toolds for vanilla TypeScript",
+  "version": "0.0.2",
+  "description": "Trivial shorthand tool for specific fits",
   "entry": "src/index.ts",
   "main": "lib/index.js",
   "sourceRoot": "src/",
   "types": "lib/index.d.ts",
-  "typeRoots": "src/@types/index.ts",
+  "typeRoots": "lib/@types/index.d.ts",
   "scripts": {
-    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('use Yarn, no NPM')\"",
     "prebuild": "rimraf lib",
     "build": "rollup -c rollup.config.ts",
     "release": "yarn build && rimraf node_modules",
@@ -25,7 +24,6 @@
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.9",
-    "@types/node": "^17.0.30",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.70.2",

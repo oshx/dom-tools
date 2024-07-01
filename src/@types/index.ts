@@ -1,16 +1,18 @@
-export type SourceString = string;
+declare type SourceString = string;
 
-export interface InnerDOMRequired {
+declare interface UniqueDOMRequired {
   root: HTMLElement;
   head: HTMLHeadElement;
   body: HTMLBodyElement;
 }
 
-export interface InnerDOMOptional {
-  inlineFrame: HTMLIFrameElement;
-  inlineFrameSource: SourceString;
-  script: HTMLScriptElement;
-  scriptSource: SourceString;
+declare interface SourceCountMap<T = HTMLElement> {
+  [source: SourceString]: T;
 }
 
-export type InnerDOM = InnerDOMRequired & Partial<InnerDOMOptional>;
+declare interface UniqueDOMOptional {
+  iframe: SourceCountMap<HTMLIFrameElement>;
+  script: SourceCountMap<HTMLScriptElement>;
+}
+
+declare type UniqueDOM = UniqueDOMRequired & Partial<UniqueDOMOptional>;

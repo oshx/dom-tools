@@ -1,28 +1,43 @@
 # @oshx/dom-tools
-This is a vanilla TypeScript helper tool.
-You can do it with this library.
-
-## Prerequisites
-```
-SuperSet Language - TypeScript
-Package Manager - Yarn
-```
+Trivial shorthand tool for specific fits.
 
 ## Installation
 ```sh
-~$ yarn add @oshx/dom-tools
+~$ npm i @oshx/dom-tools
 # Enjoy with it!
 ```
 
 ## APIs
 ### Once-series
 ```typescript
-import { onceInlineFrame, onceScript } from '@oshx/dom-tools';
+import { onceIframe, onceScript } from '@oshx/dom-tools';
 
-onceInlineFrame('app://scheme');
-onceInlineFrame('https://deeplink.page');
+onceIframe('app://scheme');
 
-onceScript('https://code.jquery.com/jquery-1.12.4.min.js');
+onceIframe('https://deeplink.page');
+
+onceIframe('https://deeplink.page');
+
+onceScript('https://lib.site/temp/logger.js');
+```
+
+### Unique DOM
+```typescript
+import { uniqueDOM } from '@oshx/dom-tools';
+
+/** 
+ * uniqueDOM {
+ *  root
+ *  head
+ *  body
+ *  iframe {
+ *   [...iframeSrcs...]: <...iframe elements...>
+ *  }
+ *  script {
+ *   [...scriptSrcs...]: <...script elements...>
+ *  }
+ * }
+ */
 ```
 
 ### Core
@@ -30,18 +45,16 @@ onceScript('https://code.jquery.com/jquery-1.12.4.min.js');
 import { REGEXP_VALID_URI } from '@oshx/dom-tools';
 
 REGEXP_VALID_URI.test('https://hostname:port/path/?searchParams');
-// REGEXP_VALID_PATH
-// REGEXP_SPACE
 ```
 
 ### Types
 ```typescript
-import { InnerDOM } from '@oshx/dom-tools/@types';
+import { UniqueDOM } from '@oshx/dom-tools/@types';
 ```
 
 ## For fun!
 Install it with me!
 
 ```
-created at 2023-03-10
+initial created at 2023-03-10
 ```

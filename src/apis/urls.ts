@@ -1,5 +1,4 @@
-import { SourceString } from '@/@types';
-import { REGEXP_VALID_PATH, REGEXP_VALID_URI } from '@/core/regexps';
+import { REGEXP_VALID_PATH, REGEXP_VALID_URI } from '../core/regexps';
 
 export function validURL(value: any): value is SourceString {
   if (typeof value !== 'string') {
