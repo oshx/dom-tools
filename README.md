@@ -4,7 +4,6 @@ Trivial shorthand tool for specific fits.
 ## Installation
 ```sh
 ~$ npm i @oshx/dom-tools
-# Enjoy with it!
 ```
 
 ## APIs
@@ -38,12 +37,13 @@ import { uniqueDOM } from '@oshx/dom-tools';
  */
 ```
 
-### Core
+### Constants
 ```typescript
-import { REGEXP_VALID_URI } from '@oshx/dom-tools';
+import { REGEXP_VALID_URI, REGEXP_VALID_PATH } from '@oshx/dom-tools';
 
 // Regular Expressions
 REGEXP_VALID_URI.test('https://hostname:port/path/?searchParams');
+REGEXP_VALID_PATH.test('./path/to/valid');
 ```
 
 ### Types
@@ -52,7 +52,8 @@ import { UniqueDOM } from '@oshx/dom-tools/@types';
 ```
 
 ## For fun!
-Install it with me!
+It made for fun to me.
+Honestly, I made it for trying to use 'rollup'.
 
 ```
 initial created at 2023-03-10
