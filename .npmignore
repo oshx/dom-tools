@@ -12,3 +12,4 @@ yarn-error.log
 README.md
 
 src
+rollup.config.ts
