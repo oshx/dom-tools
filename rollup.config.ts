@@ -1,29 +1,27 @@
-import typescript from 'rollup-plugin-typescript2';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import typescript from '@rollup/plugin-typescript';
 import alias from '@rollup/plugin-alias';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { resolve } from 'path';
 
 const PackageJson = require('./package.json');
 const aliasConfig = {
   entries: [
-    {
-      find: '@',
-      replacement: resolve(__dirname, PackageJson.sourceRoot),
-    },
+    { find: '~/', replacement: resolve(__dirname, PackageJson.sourceRoot) },
   ],
 };
 
-const tsConfig = {
-  tsconfig: './tsconfig.json',
-  declaration: true,
-};
-
-export default {
-  input: PackageJson.entry,
-  output: {
-    file: PackageJson.main,
-    format: 'cjs',
-    sourcemap: true,
+export default [
+  {
+    input: PackageJson.entry,
+    plugins: [
+      alias(aliasConfig),
+      typescript({ tsconfig: './tsconfig.json' }),
+      peerDepsExternal(),
+    ],
+    output: {
+      file: PackageJson.main,
+      format: 'cjs',
+      sourcemap: true,
+    },
   },
-  plugins: [peerDepsExternal(), typescript(tsConfig), alias(aliasConfig)],
-};
+];

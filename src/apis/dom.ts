@@ -1,3 +1,5 @@
+import '../@types';
+
 export const uniqueDOM: UniqueDOM = {
   root: window.document.documentElement,
   head: window.document.head || window.document.getElementsByTagName('head')[0],
@@ -9,12 +11,12 @@ export const uniqueDOM: UniqueDOM = {
 export function onceIframe(
   src: SourceString,
   timer: EpochTimeStamp = 300
-): ReturnType<typeof setTimeout> | void {
+): ReturnType<typeof setTimeout> | HTMLIFrameElement {
   if (!uniqueDOM?.iframe) {
     uniqueDOM.iframe = {};
   }
   if (uniqueDOM.iframe[src]) {
-    return;
+    return uniqueDOM.iframe[src];
   }
   uniqueDOM.iframe[src] = window.document.createElement('iframe');
   uniqueDOM.iframe[src].src = src;
