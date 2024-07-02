@@ -3,8 +3,7 @@
     "target": "es5",
     "module": "ESNext",
     "strict": true,
-    "skipLibCheck": true,
-    "outDir": "./lib",
+    "declarationDir": "./lib",
     "baseUrl": ".",
     "declaration": true,
     "noImplicitAny": false,
@@ -23,11 +22,6 @@
       "es2020"
     ]
   },
-  "include": [
-    "src/**/*.ts",
-  ],
-  "exclude": [
-    "node_modules",
-    "lib"
-  ]
+  "include": ["./src/*.ts"],
+  "exclude": ["node_modules", "lib"]
 }

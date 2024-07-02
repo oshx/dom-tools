@@ -8,4 +8,7 @@ node_modules
 .gitignore
 yarn-error.log
 
+.prettierrc
+README.md
+
 src
