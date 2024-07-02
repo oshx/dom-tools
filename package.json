@@ -1,6 +1,6 @@
 {
   "name": "@oshx/dom-tools",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Trivial shorthand tool for specific fits",
   "entry": "src/index.ts",
   "main": "lib/index.js",
@@ -10,7 +10,7 @@
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "rollup -c rollup.config.ts",
-    "release": "yarn build && rimraf node_modules",
+    "release": "npm run build && rimraf node_modules",
     "watch": "rollup -cw"
   },
   "repository": {

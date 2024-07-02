@@ -16,8 +16,6 @@ onceIframe('app://scheme');
 
 onceIframe('https://deeplink.page');
 
-onceIframe('https://deeplink.page');
-
 onceScript('https://lib.site/temp/logger.js');
 ```
 
@@ -44,6 +42,7 @@ import { uniqueDOM } from '@oshx/dom-tools';
 ```typescript
 import { REGEXP_VALID_URI } from '@oshx/dom-tools';
 
+// Regular Expressions
 REGEXP_VALID_URI.test('https://hostname:port/path/?searchParams');
 ```
 
