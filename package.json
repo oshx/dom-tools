@@ -1,6 +1,6 @@
 {
   "name": "@oshx/dom-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Trivial shorthand tool for specific fits",
   "entry": "src/index.ts",
   "main": "lib/index.js",
