@@ -10,7 +10,7 @@
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "rollup -c rollup.config.ts",
-    "release": "yarn build && rimraf node_modules",
+    "release": "npm run build && rimraf node_modules",
     "watch": "rollup -cw"
   },
   "repository": {
