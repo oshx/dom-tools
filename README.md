@@ -1,4 +1,7 @@
 # @oshx/dom-tools
+
+[![Node.js Package](https://github.com/oshx/dom-tools/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/oshx/dom-tools/actions/workflows/npm-publish.yml)
+
 Trivial shorthand tool for specific fits.
 
 ## Installation
