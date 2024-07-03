@@ -1,12 +1,13 @@
 {
   "name": "@oshx/dom-tools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Trivial shorthand tool for specific fits",
   "entry": "src/index.ts",
   "main": "lib/index.js",
   "sourceRoot": "./src/",
   "types": "lib/index.d.ts",
   "typeRoots": "lib/@types/index.d.ts",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "rollup -c rollup.config.ts",
@@ -18,9 +19,9 @@
   },
   "author": {
     "name": "오승환",
-    "email": "oshxios@gmail.com"
+    "email": "oshxios@gmail.com",
+    "githubUserName": "oshx"
   },
-  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-typescript": "^11.1.6",
@@ -28,7 +29,6 @@
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.70.2",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
     "typescript": "^4.9.5"
   }
 }

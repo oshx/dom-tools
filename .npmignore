@@ -6,6 +6,7 @@ node_modules
 .npmignore
 .npmrc
 .gitignore
+.github
 yarn-error.log
 
 .prettierrc
