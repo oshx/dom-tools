@@ -1,7 +1,15 @@
 {
   "name": "@oshx/dom-tools",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Trivial shorthand tool for specific fits",
+  "keywords": [
+    "typescript",
+    "dom",
+    "alias",
+    "appscheme",
+    "iframe",
+    "script"
+  ],
   "entry": "src/index.ts",
   "main": "lib/index.js",
   "sourceRoot": "./src/",
