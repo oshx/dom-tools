@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9decd641-352f-44da-88c3-38ba0008375e" name="Changes" comment="Added a license file.">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/npm-publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/npm-publish.yml" afterDir="false" />
+    <list default="true" id="9decd641-352f-44da-88c3-38ba0008375e" name="Changes" comment="Updated a version.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "fix/build",
     "last_opened_file_path": "/Users/oshios/projects/dom-tools",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -105,7 +103,39 @@
       <option name="project" value="LOCAL" />
       <updated>1720000108057</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modified by IDE.">
+      <option name="closed" value="true" />
+      <created>1720000979550</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720000979550</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added a README badge.">
+      <option name="closed" value="true" />
+      <created>1720000990382</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720000990382</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added a build pipe.">
+      <option name="closed" value="true" />
+      <created>1720001004046</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720001004046</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updated a version.">
+      <option name="closed" value="true" />
+      <created>1720001014817</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720001014817</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +145,11 @@
     <MESSAGE value="initial state." />
     <MESSAGE value="Added a github actions file." />
     <MESSAGE value="Added a license file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a license file." />
+    <MESSAGE value="Modified by IDE." />
+    <MESSAGE value="Added a README badge." />
+    <MESSAGE value="Added a build pipe." />
+    <MESSAGE value="Updated a version." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated a version." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
