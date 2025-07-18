@@ -31,6 +31,7 @@
     "githubUserName": "oshx"
   },
   "devDependencies": {
+    "@oshx/type-helper": "^1.0.8",
     "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20.14.9",

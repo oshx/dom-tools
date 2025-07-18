@@ -61,6 +61,24 @@ import { uniqueDOM } from '@oshx/dom-tools';
  */
 ```
 
+### Page Events
+
+It contains event handler for page events what is frequently used.
+
+```typescript
+import { keepFresher, unKeepFresher } from '@oshx/dom-tools';
+
+/**
+ * keepFresher(); - When visitors move to another page and then return, it should be a refreshed page.
+ */
+
+// React example
+useEffect(function afterMount() {
+  keepFresher();
+  return unKeepFresher;
+}, []);
+```
+
 ### Constants
 
 It contains some trivial Regular Expressions.
