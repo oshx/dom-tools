@@ -1,3 +1,4 @@
+/// <reference types="@oshx/type-helper" />
 import '../@types';
 import { PAGE_HIDE, PAGE_SHOW, PAGE_VISIBILITY_CHANGE } from '../constants';
 
@@ -23,7 +24,7 @@ export type BindEventParam = BindEventObject | BindEventObject[];
 
 export const RegisteredEventList: BindEventObject[] = [];
 
-export function bindEvent(params: BindEventParam): boolean {
+export function bindEvent(params: BindEventParam): void {
   try {
     if (!Array.isArray(params)) {
       params = [params];
@@ -33,13 +34,12 @@ export function bindEvent(params: BindEventParam): boolean {
       EventTarget[eventName].addEventListener(eventName, handler, options);
       RegisteredEventList.push(param);
     });
-    return true;
   } catch (exception) {
-    return false;
+    console.debug(exception);
   }
 }
 
-export function unbindEvent(params: BindEventParam): boolean {
+export function unbindEvent(params: BindEventParam): void {
   try {
     if (!Array.isArray(params)) {
       params = [params];
@@ -51,30 +51,43 @@ export function unbindEvent(params: BindEventParam): boolean {
       }
       EventTarget[eventName].removeEventListener(eventName, handler, options);
     }
-    return true;
   } catch (exception) {
-    return false;
+    console.debug(exception);
   }
 }
 
-export function checkVisible(): boolean {
-  return window.document?.visibilityState === 'visible' || !document?.hidden;
+export function createPersistedVisibleChecker(callback?: AnyFunction): AnyFunction {
+  return function checkPersistedVisible(delegatedEvent?: PageTransitionEvent): void {
+    if (window.document?.visibilityState === 'hidden' || document?.hidden) {
+      return;
+    }
+    switch (delegatedEvent?.type) {
+      case PAGE_SHOW:
+        if (!delegatedEvent?.persisted) {
+          return;
+        }
+        break;
+      case PAGE_VISIBILITY_CHANGE:
+        break;
+      default:
+        return;
+    }
+    callback?.();
+  };
 }
 
-export function refresher(precondition?: AnyFunction): void {
-  if (precondition !== undefined && typeof precondition === typeof Function && !precondition()) {
-    return;
-  }
+export function refresher(): void {
   window.location.reload();
 }
 
-export function keepFresher(): boolean {
+export function keepFresher(): void {
+  const handler = createPersistedVisibleChecker(refresher);
   return bindEvent([
-    { eventName: PAGE_SHOW, handler: refresher },
-    { eventName: PAGE_VISIBILITY_CHANGE, handler: refresher.bind(null, checkVisible) },
+    { eventName: PAGE_SHOW, handler },
+    { eventName: PAGE_VISIBILITY_CHANGE, handler },
   ]);
 }
 
-export function unKeepFresher(): boolean {
+export function unKeepFresher(): void {
   return unbindEvent(RegisteredEventList);
 }

@@ -13,8 +13,10 @@ export default {
   input: PackageJson.entry,
   plugins: [alias(aliasConfig), typescript({ tsconfig: './tsconfig.json' })],
   output: {
-    file: PackageJson.main,
     format: 'cjs',
     sourcemap: true,
+    preserveModules: true,
+    dir: PackageJson.dir,
   },
+  treeshake: true,
 };
