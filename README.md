@@ -91,9 +91,8 @@ useEffect(keepFresher, []);
 The page will be refreshed when visitors move to another page and then return.
 
 `unKeepFresher`
-- run`removeEventListener`
-for each items
-of`registeredEvents`
+
+- run `removeEventListener` for each items of `registeredEvents`
 
 ### Constants
 
