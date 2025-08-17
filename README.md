@@ -90,8 +90,6 @@ useEffect(keepFresher, []);
 
 The page will be refreshed when visitors move to another page and then return.
 
-```typescript
-
 `unKeepFresher`
 - run`removeEventListener`
 for each items

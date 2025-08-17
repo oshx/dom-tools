@@ -35,7 +35,7 @@ export function bindEvent(params: BindEventParam): void {
       RegisteredEventList.push(param);
     });
   } catch (exception) {
-    console.debug(exception);
+    console.error(exception);
   }
 }
 
@@ -52,7 +52,7 @@ export function unbindEvent(params: BindEventParam): void {
       EventTarget[eventName].removeEventListener(eventName, handler, options);
     }
   } catch (exception) {
-    console.debug(exception);
+    console.error(exception);
   }
 }
 
