@@ -61,6 +61,39 @@ import { uniqueDOM } from '@oshx/dom-tools';
  */
 ```
 
+### Page Events
+
+It contains event handler for page events what is frequently used.
+
+```typescript
+import { keepFresher, unKeepFresher } from '@oshx/dom-tools';
+
+/**
+ * keepFresher(); - When visitors move to another page and then return, it should be a refreshed page.
+ */
+
+// React example with unmount handler
+useEffect(function afterMount() {
+  keepFresher();
+  return unKeepFresher;
+}, []);
+
+// React example without unmount handler
+useEffect(keepFresher, []);
+```
+
+`keepFresher`
+
+- `pageshow` to `window`
+- `visibilitychange` to `window.document`
+- listed up into `registeredEvents`
+
+The page will be refreshed when visitors move to another page and then return.
+
+`unKeepFresher`
+
+- run `removeEventListener` for each items of `registeredEvents`
+
 ### Constants
 
 It contains some trivial Regular Expressions.

@@ -11,6 +11,11 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@oshx",
+      "./src/@types"
+    ],
     "lib": [
       "dom.iterable",
       "dom",
